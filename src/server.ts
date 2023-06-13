@@ -16,8 +16,8 @@ app.get('/', function (_, res) {
 });
 
 const start = async () => {
-	// Initialize Payload
-	await payload.init({
+    // Initialize Payload
+    await payload.init({
     secret: process.env.PAYLOAD_SECRET_KEY,
     mongoURL: process.env.MONGO_URL,
     express: app,
@@ -31,10 +31,11 @@ const start = async () => {
     },
   });
 
-	// Seed database with startup data
-	resetScheduledJob.start();
+    // Seed database with startup data
+    //cbxx only run once locally
+    //resetScheduledJob.start();
 
-	app.listen(3000);
+    app.listen(3099);
 }
 
 start();

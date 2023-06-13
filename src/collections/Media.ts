@@ -9,9 +9,16 @@ const Media: CollectionConfig = {
     read: () => true,
 
     // access is limited for demo purposes, remove to restore upload capability
+    /*
     create: () => false,
     update: () => false,
     delete: () => false,
+    */
+
+    //cbxx allow locally
+    create: () => true,
+    update: () => true,
+    delete: () => true
   },
   admin: {
     useAsTitle: 'filename',
@@ -33,6 +40,7 @@ const Media: CollectionConfig = {
     mimeTypes: ['image/png', 'image/jpeg'],
 
     // in addition to the original file, Payload saves resized images automatically
+    //cbxx FIXME crops images (thumbnail, portrait) -> change config
     imageSizes: [
       {
         name: 'thumbnail',
